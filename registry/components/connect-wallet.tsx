@@ -50,12 +50,8 @@ const ConnectWallet: React.FC<ConnectWalletProps> = ({
   const endpoint = useMemo(() => clusterApiUrl(network as Cluster), [network]);
 
   return (
-    <ConnectionProvider endpoint={endpoint}>
-      {/* Note: WalletProvider should ideally wrap a higher level in your app (like layout.tsx)
-          if multiple components need wallet access. Keeping it here for self-containment
-          as per your original code, but be mindful for larger applications. */}
-      <WalletProvider wallets={wallets} autoConnect>
-        {/* Pass the custom buttonClassName down to the WalletModal */}
+    <ConnectionProvider endpoint={endpoint}>     
+      <WalletProvider wallets={wallets} autoConnect>    
         <WalletModal buttonClassName={buttonClassName} />
       </WalletProvider>
     </ConnectionProvider>
