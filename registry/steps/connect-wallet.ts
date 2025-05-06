@@ -1,4 +1,75 @@
-// components/ConnectWallet.tsx
+// steps/connect-wallet.ts
+
+export const ConnectWalletSteps = [
+  {
+    title: "1. Install Dependencies",
+    code: `npm install @solana/wallet-adapter-react @solana/wallet-adapter-wallets  @solana/wallet-adapter-base`
+  },
+  {
+    title: "2. Create Wallet Context Provider",
+    code: `// components/WalletProvider.tsx
+import React, { FC, ReactNode, useMemo } from "react";
+import {
+  ConnectionProvider,
+  WalletProvider
+} from "@solana/wallet-adapter-react";
+import {
+  WalletAdapterNetwork
+} from "@solana/wallet-adapter-base";
+import {
+  PhantomWalletAdapter,
+  SolflareWalletAdapter
+} from "@solana/wallet-adapter-wallets";
+import { clusterApiUrl } from "@solana/web3.js";
+
+export const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  const network = WalletAdapterNetwork.Mainnet;
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const wallets = useMemo(
+    () => [new PhantomWalletAdapter(),
+  new SolflareWalletAdapter(),
+  new MathWalletAdapter(),
+  new AlphaWalletAdapter(),
+  new AvanaWalletAdapter(),
+  new BitpieWalletAdapter(),
+  new CoinbaseWalletAdapter(),
+  new LedgerWalletAdapter(),
+  new TrustWalletAdapter(),
+  new TrezorWalletAdapter()],
+    [network]
+  );
+
+  return (
+    <ConnectionProvider endpoint={endpoint}>
+      <WalletProvider wallets={wallets} autoConnect>
+        {children}
+      </WalletProvider>
+    </ConnectionProvider>
+  );
+};`
+  },
+  {
+    title: "3. Wrap Your App with the Provider",
+    code: `// app/layout.tsx or pages/_app.tsx
+import React from "react";
+import { WalletContextProvider } from "@/components/WalletProvider";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html>
+      <body>
+        <WalletContextProvider>
+          {children}
+        </WalletContextProvider>
+      </body>
+    </html>
+  );
+}`
+  },
+  {
+    title: "4. Copy the ConnectWallet Component",
+    code: `
+    // components/ConnectWallet.tsx
 "use client";
 
 import React from "react";
@@ -62,7 +133,7 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({ buttonClassName })
       setTimeout(closeModal, 1500);
     } else if (!connecting && !connected && modalState === "connecting") {
       setModalState("error");
-      setErrorMessage(`Failed to connect to ${selectedWallet}`);
+setErrorMessage(\`Failed to connect to \${selectedWallet}. Please try again.\`);
     }
   }, [connecting, connected, publicKey, selectedWallet, modalState]);
 
@@ -168,3 +239,8 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({ buttonClassName })
     </div>
   );
 };
+
+
+`
+  }
+];

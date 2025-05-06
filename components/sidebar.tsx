@@ -25,7 +25,11 @@ const sidebarSections: SidebarSection[] = [
     title: 'Components',
     links: [
       { href: '/components/connect-wallet', label: 'Connect Wallet' },
-      { href: '/components/transaction-toast', label: 'Toast Messages' },
+      { href: '/components/transaction-history', label: 'Transaction History' },
+      { href: '/components/solana-balance-badge', label: 'Solana Balance Badge' },
+      { href: '/components/stake', label: 'Stake' },
+
+
      
     ],
   },
@@ -49,9 +53,9 @@ const Sidebar: React.FC = () => {
                     <li key={linkIndex} className="mb-2">
                       <Link href={link.href} legacyBehavior>
                         <a
-                          className={`block py-2 px-3 rounded-md transition duration-200 ease-in-out
+                          className={`block py-2 font-normal text-sm px-3 rounded-md transition duration-200 ease-in-out
                             ${isActive
-                              ? 'bg-neutral-700 text-white'
+                              ? 'bg-neutral-800 text-white'
                               : 'hover:bg-neutral-800 hover:text-neutral-100'
                             }`}
                         >

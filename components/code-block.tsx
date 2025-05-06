@@ -43,12 +43,13 @@ export function CodeBlock({
     }
   };
 
+  // Split lines and determine if code should collapse
   const lines = code.split('\n');
-  const isLong = lines.length > previewLines!;
+  const shouldCollapse = previewLines > 0 && lines.length > previewLines;
   const displayText = mounted
-    ? isLong && !expanded
+    ? (shouldCollapse && !expanded
       ? lines.slice(0, previewLines).join('\n')
-      : code
+      : code)
     : '';
 
   return (
@@ -58,7 +59,7 @@ export function CodeBlock({
         <Button size="icon" variant="ghost" onClick={handleCopy} disabled={copied} aria-label="Copy code">
           {copied ? <IconCheck size={18} /> : <IconCopy size={18} />}
         </Button>
-        {isLong && (
+        {shouldCollapse && (
           <Button size="icon" variant="ghost" onClick={() => setExpanded(!expanded)} aria-label={expanded ? 'Collapse code' : 'Expand code'}>
             {expanded ? <IconMinimize size={18} /> : <IconMaximize size={18} />}
           </Button>
@@ -66,20 +67,20 @@ export function CodeBlock({
       </div>
 
       {/* Center Expand button overlay when collapsed */}
-      {isLong && !expanded && (
-        <div className="absolute inset-0 flex items-center justify-center z-40 ">
-          <Button className='bg-neutral-500 text-white hover:bg-neutral-600' size="sm" onClick={() => setExpanded(true)}>
+      {shouldCollapse && !expanded && (
+        <div className="absolute inset-0  flex items-center justify-center z-20">
+          <Button className='bg-neutral-500/40 text-white hover:bg-neutral-600' size="sm" onClick={() => setExpanded(true)}>
             Expand
           </Button>
         </div>
       )}
 
       {/* Fade overlay when collapsed */}
-      {isLong && !expanded && (
+      {shouldCollapse && !expanded && (
         <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-neutral-900 to-transparent z-10" />
       )}
 
-      <div className={cn('p-4 overflow-auto', !expanded && isLong && `max-h-[${previewLines! * 1.5}rem]`)}>
+      <div className={cn('p-4 overflow-auto', !expanded && shouldCollapse && `max-h-[${previewLines * 1.5}rem]`)}>
         {mounted ? (
           <SyntaxHighlighter
             language={language}
