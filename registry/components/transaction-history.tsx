@@ -29,11 +29,8 @@ interface TransactionHistoryProps {
 
 export function TransactionHistory({ transactions }: TransactionHistoryProps) {
   return (
-    <div className="rounded-lg  border border-gray-700 bg-black text-white">
-      <div className="flex items-center justify-between border-b border-gray-700 px-4 py-3">
-        <h3 className="text-lg font-semibold text-white">Transaction History</h3>
-        
-      </div>
+    <div className="rounded-lg  bg-black text-white">
+    
       <div className="overflow-x-auto">
         <Table className="text-white w-full min-w-[800px] ">
           <TableHeader >

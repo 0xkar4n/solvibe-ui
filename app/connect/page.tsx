@@ -1,14 +1,58 @@
+import { NFTGallery } from '@/components/nft-gallery'
 import React from 'react'
 
-import ConnectWallet from '@/components/connect-wallet';
-import { TransactionHistory } from '@/registry/components/transaction-history';
-
-const ConnectWalletTest = () => {
+const nfts = [
+  {
+    id: "nft1",
+    name: "Madlad #7648",
+    image: "/madlad.png",
+    collection: "Mad Lads",
+    price: {
+      amount: 47.79,
+    },
+    rarity: {
+      rank: 4799,
+      score: 85,
+      total: 5000,
+    },
+  },
+  {
+    id: "nft2",
+    name: "DeGod #456",
+    image: "/degod.png",
+    collection: "DeGods",
+    price: {
+      amount: 25,
+    },
+    rarity: {
+      rank: 456,
+      score: 92,
+      total: 10000,
+    },
+  },
+  {
+    id: "nft3",
+    name: "Madlad #3597",
+    image: "/madlad.png",
+    collection: "Mad Lads",
+    price: {
+      amount: 48.99,
+    },
+    rarity: {
+      rank: 3597,
+      score: 85,
+      total: 5000,
+    },
+  },
+]
+const Test = () => {
+  
   return (
-    <div className=' flex items-center justify-center h-screen  bg-black'>
-         
-    </div>
+    <div>
+            <h2 className="text-2xl font-bold mb-4">Your NFTs</h2>
+            <NFTGallery nfts={nfts} />
+          </div>
   )
 }
 
-export default ConnectWalletTest
+export default Test
