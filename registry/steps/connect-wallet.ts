@@ -2,11 +2,11 @@
 
 export const ConnectWalletSteps = [
   {
-    title: "1. Install Dependencies",
+    title: "Install Dependencies",
     code: `npm install @solana/wallet-adapter-react @solana/wallet-adapter-wallets  @solana/wallet-adapter-base`
   },
   {
-    title: "2. Create Wallet Context Provider",
+    title: "Create Wallet Context Provider",
     code: `// components/WalletProvider.tsx
 import React, { FC, ReactNode, useMemo } from "react";
 import {
@@ -49,7 +49,7 @@ export const WalletContextProvider: FC<{ children: ReactNode }> = ({ children })
 };`
   },
   {
-    title: "3. Wrap Your App with the Provider",
+    title: "Wrap Your App with the Provider",
     code: `// app/layout.tsx or pages/_app.tsx
 import React from "react";
 import { WalletContextProvider } from "@/components/WalletProvider";
@@ -67,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }`
   },
   {
-    title: "4. Copy the ConnectWallet Component",
+    title: "Copy the ConnectWallet Component",
     code: `
     // components/ConnectWallet.tsx
 "use client";

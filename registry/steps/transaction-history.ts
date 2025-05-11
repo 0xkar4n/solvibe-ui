@@ -1,18 +1,18 @@
 export const TransactionHistorySteps = [
   {
-    title: "1. Install UI Primitives",
+    title: "Install UI Primitives",
     code: `npm install @shadcn/ui @radix-ui/react-table lucide-react`,
   },
   {
-    title: "2. Import the Component",
+    title: "Import the Component",
     code: `import { TransactionHistory, Transaction } from "@/components/TransactionHistory";`,
   },
   {
-    title: "3. Define Your Data",
+    title: "Define Your Data",
     code: `const transactions: Transaction[] = [ /* your array of Transaction objects */ ];`,
   },
   {
-    title: "4. Copy the TransactionHistory Component",
+    title: "Copy the TransactionHistory Component",
     code: `// components/TransactionHistory.tsx
 "use client";
 

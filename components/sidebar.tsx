@@ -27,9 +27,8 @@ const sidebarSections: SidebarSection[] = [
       { href: '/components/connect-wallet', label: 'Connect Wallet' },
       { href: '/components/transaction-history', label: 'Transaction History' },
       { href: '/components/solana-balance-badge', label: 'Solana Balance Badge' },
-      { href: '/components/stake', label: 'Stake' },
-      { href: '/components/NFT-card', label: 'NFT Card' },
-      { href: '/components/NFT-gallery', label: 'NFT Gallery' },     
+      { href: '/components/Nft-card', label: 'NFT Card' },
+      { href: '/components/Nft-gallery', label: 'NFT Gallery' },     
     ],
   },
 ]
@@ -43,7 +42,7 @@ const Sidebar: React.FC = () => {
       <nav>
         <ul>
           {sidebarSections.map((section, index) => (
-            <li key={index} className="mb-6">
+            <li key={index} className="mb-2 fade-dashed-border-bottom">
               <div className="text-neutral-200 text-md font-bold mb-2">{section.title}</div>
               <ul>
                 {section.links.map((link, linkIndex) => {

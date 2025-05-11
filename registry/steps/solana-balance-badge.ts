@@ -1,15 +1,15 @@
 export const SolanaBalanceBadgeSteps = [
     {
-      title: "1. Install UI Primitives",
+      title: "Install UI Primitives",
       code: `npx shadcn@latest add badge `,
     },
     {
-      title: "2. Place Solana Logo",
+      title: "Place Solana Logo",
       code: `# Download and put the Solana PNG logo in your public folder
   #   public/solana-logo.png`,
     },
     {
-      title: "3. Add the Badge Component",
+      title: "Add the Badge Component",
       code: `// components/SolanaBalanceBadge.tsx
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";

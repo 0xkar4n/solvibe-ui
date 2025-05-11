@@ -45,7 +45,7 @@ const nfts = [
     },
   },
 ]
-const Test = () => {
+const NftGalleryDemo = () => {
   
   return (
     <div className='m-8 max-h-screen max-w-screen'>
@@ -55,4 +55,4 @@ const Test = () => {
   )
 }
 
-export default Test
+export default NftGalleryDemo

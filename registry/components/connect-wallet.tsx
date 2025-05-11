@@ -14,10 +14,10 @@ type ModalState = "selection" | "connecting" | "error";
 const walletsToShow = 6;
 
 interface ConnectWalletProps {
-  buttonClassName?: string;
+  className?: string;
 }
 
-export const ConnectWallet: React.FC<ConnectWalletProps> = ({ buttonClassName }) => {
+export const ConnectWallet: React.FC<ConnectWalletProps> = ({ className }) => {
   const {
     select,
     publicKey,
@@ -73,7 +73,7 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({ buttonClassName })
     <div className="relative">
       {connected && publicKey ? (
         <motion.button
-          className={cn(connectedBtn, buttonClassName)}
+          className={cn(connectedBtn, className)}
           onClick={disconnect}
           whileTap={{ scale: 0.95 }}
         >
@@ -85,7 +85,7 @@ export const ConnectWallet: React.FC<ConnectWalletProps> = ({ buttonClassName })
       ) : (
         <motion.button
           onClick={openModal}
-          className={cn(defaultBtn, buttonClassName)}
+          className={cn(defaultBtn, className)}
           whileTap={{ scale: 0.95 }}
         >
           Connect Wallet

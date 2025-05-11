@@ -80,11 +80,11 @@ export default function NFTCard({
           )}
         </div>
       </CardContent>
-      <CardFooter className="p-4 pt-0 flex items-center justify-between">
+      <CardFooter className="p-4 pt-0 flex items-center gap-2 justify-between">
         {price && (
           <div className="flex text-sm font-bold items-center gap-2">
             <img src="/solana-logo.png" alt="Solana" className="w-4 h-4" />
-            {price.amount} 
+            {price.amount}            
           </div>
         )}
         <Button size="sm" variant="secondary" onClick={onAction}>

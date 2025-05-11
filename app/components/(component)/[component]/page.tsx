@@ -38,7 +38,7 @@ export default function ComponentPage() {
         <div className="text-center space-y-4">
           <h2 className="text-2xl font-bold">Component Not Found</h2>
           <p className="text-lg text-neutral-400">The component you're looking for doesn't exist.</p>
-          <Button onClick={() => router.push("/components")} variant="outline">
+          <Button onClick={() => router.push("/components")} variant="default">
             <ChevronLeft className="mr-2 h-4 w-4" />
             Back to Components
           </Button>
@@ -153,7 +153,7 @@ export default function ComponentPage() {
                 </div>
                 <div
                   className={cn(
-                    "flex min-h-[500px] items-center justify-center rounded-lg border border-neutral-800 bg-neutral-900/50 p-10 backdrop-blur-sm transition-all",
+                    "flex min-h-[500px]  items-center justify-center rounded-lg border border-neutral-800 bg-neutral-900/50 p-10 backdrop-blur-sm transition-all",
                     "hover:border-neutral-700 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)]",
                   )}
                 >
@@ -196,7 +196,6 @@ export default function ComponentPage() {
               </motion.div>
             </TabsContent>
 
-            {/* Installation Content */}
             <TabsContent value="installation" className="mt-6">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -259,51 +258,12 @@ export default function ComponentPage() {
                   </div>
                 )}
 
-                <div className="rounded-lg border border-neutral-800 bg-neutral-900/50 p-6">
-                  <h3 className="mb-4 text-xl font-medium">Additional Resources</h3>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <Link
-                      href="https://nextjs.org/docs"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between rounded-md border border-neutral-800 bg-neutral-950 p-4 transition-colors hover:border-neutral-700 hover:bg-neutral-900"
-                    >
-                      <div className="flex items-center">
-                        <div className="mr-4 rounded-full bg-neutral-800 p-2">
-                          <ExternalLink className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium">Next.js Documentation</h4>
-                          <p className="text-sm text-neutral-400">Official Next.js documentation</p>
-                        </div>
-                      </div>
-                      <ChevronLeft className="h-5 w-5 rotate-180 text-neutral-500" />
-                    </Link>
-                    <Link
-                      href="https://tailwindcss.com/docs"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between rounded-md border border-neutral-800 bg-neutral-950 p-4 transition-colors hover:border-neutral-700 hover:bg-neutral-900"
-                    >
-                      <div className="flex items-center">
-                        <div className="mr-4 rounded-full bg-neutral-800 p-2">
-                          <ExternalLink className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium">Tailwind CSS</h4>
-                          <p className="text-sm text-neutral-400">Utility-first CSS framework</p>
-                        </div>
-                      </div>
-                      <ChevronLeft className="h-5 w-5 rotate-180 text-neutral-500" />
-                    </Link>
-                  </div>
-                </div>
+                
               </motion.div>
             </TabsContent>
           </Tabs>
 
-          {/* Component Props Section */}
-          {/* <section className="space-y-6 border-t border-neutral-800 pt-10">
+          <section className="space-y-6 border-t border-neutral-800 pt-10">
             <h2 className="text-3xl font-semibold tracking-tight">Component Props</h2>
             <div className="overflow-hidden rounded-lg border border-neutral-800">
               <table className="w-full border-collapse text-sm">
@@ -344,7 +304,7 @@ export default function ComponentPage() {
                 </tbody>
               </table>
             </div>
-          </section> */}
+          </section>
 
       
 

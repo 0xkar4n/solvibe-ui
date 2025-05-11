@@ -7,6 +7,9 @@ import { TransactionHistorySteps } from "../registry/steps/transaction-history";
 import SolanaBalanceBadgeDemo from "../registry/demo/solana-balance-demo"
 import { SolanaBalanceBadgeSteps } from "../registry/steps/solana-balance-badge";
 
+import NftCardDemo from "./demo/nft-card-demo";
+import {NFTCardSteps} from "../registry/steps/nft-card"
+
 type Entry = {
   id: string;
   title: string;
@@ -16,6 +19,12 @@ type Entry = {
   installation: {
     title: string;
     code: string;
+  }[];
+  props: {
+    name: string,
+    type: string,
+    default: string,
+    description: string,
   }[];
 };
 
@@ -38,6 +47,15 @@ export function ConnectWalletDemo() {
       title: step.title,
       code: step.code.trim(),
     })),
+    props: [
+      {
+        name: "classname",
+        type: "string",
+        default: "default",
+        description: "Tailwind css ",
+      },
+    ],
+
   },
   {
     id: "transaction-history",
@@ -92,6 +110,26 @@ export default function TransactionHistoryDemo() {
 }
     `.trim(),
     installation: TransactionHistorySteps,
+    props: [
+      {
+        name: "variant",
+        type: "string",
+        default: "default",
+        description: "The button style variant to use.",
+      },
+      {
+        name: "size",
+        type: "string",
+        default: "default",
+        description: "The size of the button.",
+      },
+      {
+        name: "asChild",
+        type: "boolean",
+        default: "false",
+        description: "Whether to render as a child element.",
+      },
+    ],
   },
 
   {
@@ -106,17 +144,105 @@ import { SolanaBalanceBadge } from "../components/solana-balance-badge";
 export default function SolanaBalanceBadgeDemo() {
   const userBalance = 1.27;
   return (
-    <div className="flex gap-8">
-      <SolanaBalanceBadge balance={userBalance} />
-      <SolanaBalanceBadge
-        balance={userBalance}
-        variant="default"
-      />
+   <div className="flex flex-col gap-8 items-center">
+      <div className="flex gap-8 items-center">
+      <SolanaBalanceBadge  balance={userBalance} />
+      <SolanaBalanceBadge  balance={userBalance}  variant="default" />
+      </div>
+      <div className="flex gap-8 items-center">      
+      <SolanaBalanceBadge  balance={userBalance} variant="outline" classname="text-white" />
+      <SolanaBalanceBadge  balance={userBalance} variant="destructive"/>
+      </div>
     </div>
   );
 
     `.trim(),
     installation: SolanaBalanceBadgeSteps,
+    props: [
+      {
+        name: "balance",
+        type: "number",
+        default: "0.00",
+        description: "Solana balance value",
+      },
+      {
+        name: "variant",
+        type: "string",
+        default: "default | outline | destructive | secondary",
+        description: "Type of badge variant",
+      },
+      {
+        name: "classname",
+        type: "string",
+        default: "default",
+        description: " ",
+      },
+    ],
+  }
+  ,
+
+  {
+    id: "Nft-card",
+    title: "NFT Card",
+    description:
+      "NFT card component",
+    Component: NftCardDemo,
+    demoCode: `
+    import NFTCard from "@/components/nft-card";
+
+const nft = 
+  {
+    id: "nft3",
+    name: "Madlad #3597",
+    image: "/madlad.png",
+    collection: "Mad Lads",
+    price: {
+      amount: 48.99,
+    },
+    rarity: {
+      rank: 3597,
+      score: 85,
+      total: 5000,
+    },
+  }
+
+export default function NftCardDemo() {
+  return (
+    <div className="flex items-center">
+            <NFTCard
+              key={nft.id}
+              id={nft.id}
+              name={nft.name}
+              image={nft.image}
+              collection={nft.collection}
+              price={nft.price}
+              rarity={nft.rarity}
+            />
+    </div>
+  )
+}   
+    `.trim(),
+    installation: NFTCardSteps,
+    props: [
+      {
+        name: "balance",
+        type: "number",
+        default: "0.00",
+        description: "Solana balance value",
+      },
+      {
+        name: "variant",
+        type: "string",
+        default: "default | outline | destructive | secondary",
+        description: "Type of badge variant",
+      },
+      {
+        name: "classname",
+        type: "string",
+        default: "default",
+        description: " ",
+      },
+    ],
   }
 
 
