@@ -1,4 +1,4 @@
-import { NFTGallery } from '@/components/nft-gallery'
+import { NFTGallery } from '@/registry/components/nft-gallery'
 import React from 'react'
 
 const nfts = [
@@ -48,7 +48,7 @@ const nfts = [
 const Test = () => {
   
   return (
-    <div>
+    <div className='m-8 max-h-screen max-w-screen'>
             <h2 className="text-2xl font-bold mb-4">Your NFTs</h2>
             <NFTGallery nfts={nfts} />
           </div>

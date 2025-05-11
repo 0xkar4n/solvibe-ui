@@ -86,19 +86,19 @@ export function NFTGallery({ nfts, onNFTAction, className }: NFTGalleryProps) {
             <Button
               variant="default"
               size="icon"
-              className={cn("rounded-r-none ", viewMode === "grid" && "bg-muted")}
+              className={cn("rounded-r-none  ", viewMode === "grid" && "bg-muted hover:bg-white")}
               onClick={() => setViewMode("grid")}
             >
-              <Grid3X3 className="h-4 w-4" color={viewMode==='grid'?"#000000":"#ffffff"} />
+              <Grid3X3 className="h-4 w-4 hover:none" color={viewMode==='grid'?"#000000":"#ffffff"} />
               
             </Button>
             <Button
               variant="default"
               size="icon"
-              className={cn("rounded-l-none", viewMode === "list" && "bg-muted")}
+              className={cn("rounded-l-none hover:bg-none ", viewMode === "list" && "bg-muted hover:bg-white")}
               onClick={() => setViewMode("list")}
             >
-              <List className="h-4 w-4" color={viewMode==='list'?"#000000":"#ffffff"} />
+              <List className="h-4 w-4 hover:none" color={viewMode==='list'?"#000000":"#ffffff"} />
             </Button>
           </div>
         </div>
@@ -146,13 +146,13 @@ export function NFTGallery({ nfts, onNFTAction, className }: NFTGalleryProps) {
               </div>
               <div className="flex items-center gap-4">
                 {nft.price && (
-                  <div className="text-sm font-medium  items-center gap-2">
+                  <div className="text-sm font-medium flex  items-center  gap-2">
                 <img src="/solana-logo.png" alt="Solana" className="w-4 h-4" />
 
                     {nft.price.amount} 
                   </div>
                 )}
-                <Button size="sm" variant="outline" onClick={() => onNFTAction?.(nft)}>
+                <Button size="sm" variant="secondary"  onClick={() => onNFTAction?.(nft)}>
                   {nft.isOwned ? "List for Sale" : "Buy Now"}
                 </Button>
               </div>

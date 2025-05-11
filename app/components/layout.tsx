@@ -13,10 +13,9 @@ export default function ComponentLayout({
 
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 p-6">
+          <main className="flex-1 ">
             {children}
           </main>
-          <div className="lg:w-20 lg:border-l lg:border-dashed lg:border-neutral-600"></div>
         </div>
       </div>
   }

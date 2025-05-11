@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.2.8",
     "@radix-ui/react-select": "^2.2.2",
     "@radix-ui/react-slot": "^1.2.0",
     "@radix-ui/react-tabs": "^1.1.9",
@@ -27,6 +28,7 @@
     "lucide-react": "^0.503.0",
     "motion": "^12.9.2",
     "next": "14.2.24",
+    "prism-react-renderer": "^2.4.1",
     "react": "^18",
     "react-dom": "^18",
     "react-syntax-highlighter": "^15.6.1",

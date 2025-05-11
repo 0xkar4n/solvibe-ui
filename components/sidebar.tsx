@@ -28,9 +28,8 @@ const sidebarSections: SidebarSection[] = [
       { href: '/components/transaction-history', label: 'Transaction History' },
       { href: '/components/solana-balance-badge', label: 'Solana Balance Badge' },
       { href: '/components/stake', label: 'Stake' },
-
-
-     
+      { href: '/components/NFT-card', label: 'NFT Card' },
+      { href: '/components/NFT-gallery', label: 'NFT Gallery' },     
     ],
   },
 ]
@@ -45,7 +44,7 @@ const Sidebar: React.FC = () => {
         <ul>
           {sidebarSections.map((section, index) => (
             <li key={index} className="mb-6">
-              <div className="text-neutral-100 text-sm font-semibold mb-2">{section.title}</div>
+              <div className="text-neutral-200 text-md font-bold mb-2">{section.title}</div>
               <ul>
                 {section.links.map((link, linkIndex) => {
                   const isActive = pathname === link.href;

@@ -87,7 +87,7 @@ export default function NFTCard({
             {price.amount} 
           </div>
         )}
-        <Button size="sm" onClick={onAction}>
+        <Button size="sm" variant="secondary" onClick={onAction}>
           {actionLabel}
         </Button>
       </CardFooter>

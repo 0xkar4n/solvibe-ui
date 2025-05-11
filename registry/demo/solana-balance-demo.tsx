@@ -7,7 +7,7 @@ export default function SolanaBalanceBadgeDemo() {
       <SolanaBalanceBadge balance={userBalance} />
       <SolanaBalanceBadge
         balance={userBalance}
-        classname="bg-black text-white border-none"
+        variant="default"
       />
     </div>
   );
