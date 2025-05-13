@@ -48,7 +48,7 @@ const nfts = [
 const NftGalleryDemo = () => {
   
   return (
-    <div className='m-8 max-h-screen max-w-screen'>
+    <div className='m-8 max-h-screen max-w-screen border border-1 border-neutral-700 p-4 rounded-lg'>
             <h2 className="text-2xl font-bold mb-4">Your NFTs</h2>
             <NFTGallery nfts={nfts} />
           </div>

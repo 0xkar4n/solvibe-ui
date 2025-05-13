@@ -80,7 +80,7 @@ export default function NFTCard({
           )}
         </div>
       </CardContent>
-      <CardFooter className="p-4 pt-0 flex items-center gap-2 justify-between">
+      <CardFooter className="p-4 pt-0 flex items-center gap-4 justify-between">
         {price && (
           <div className="flex text-sm font-bold items-center gap-2">
             <img src="/solana-logo.png" alt="Solana" className="w-4 h-4" />

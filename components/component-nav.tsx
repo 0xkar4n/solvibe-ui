@@ -10,7 +10,6 @@ import { Search, Menu, X, ChevronRight, Package, Layers } from "lucide-react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion, AnimatePresence } from "framer-motion"
 
-// Group components by category
 const groupedComponents = Registry.reduce(
   (acc, component) => {
     const category = component.category || "Uncategorized"

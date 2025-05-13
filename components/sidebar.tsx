@@ -18,7 +18,9 @@ const sidebarSections: SidebarSection[] = [
   {
     title: 'Getting started',
     links: [
-      { href: '/components', label: 'Information' },      
+      { href: '/components', label: 'Information' },
+      { href: '/components/installation', label: 'Installation' },      
+
     ],
   },
   {
@@ -27,10 +29,17 @@ const sidebarSections: SidebarSection[] = [
       { href: '/components/connect-wallet', label: 'Connect Wallet' },
       { href: '/components/transaction-history', label: 'Transaction History' },
       { href: '/components/solana-balance-badge', label: 'Solana Balance Badge' },
-      { href: '/components/Nft-card', label: 'NFT Card' },
-      { href: '/components/Nft-gallery', label: 'NFT Gallery' },     
+      { href: '/components/nft-card', label: 'NFT Card' },
+      { href: '/components/nft-gallery', label: 'NFT Gallery' },     
     ],
   },
+  // {
+  //   title: 'Full Fledged Components',
+  //   links: [
+  //     { href: '/components/stake', label: 'Stake' },
+    
+  //   ],
+  // },
 ]
   
 
@@ -42,7 +51,7 @@ const Sidebar: React.FC = () => {
       <nav>
         <ul>
           {sidebarSections.map((section, index) => (
-            <li key={index} className="mb-2 fade-dashed-border-bottom">
+            <li key={index} className="mb-2 py-2 fade-dashed-border-bottom">
               <div className="text-neutral-200 text-md font-bold mb-2">{section.title}</div>
               <ul>
                 {section.links.map((link, linkIndex) => {

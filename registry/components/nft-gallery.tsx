@@ -61,7 +61,7 @@ export function NFTGallery({ nfts, onNFTAction, className }: NFTGalleryProps) {
 
   return (
     <div className={className}>
-      <div className="flex flex-col sm:flex-row gap-4 mb-6">
+      <div className="flex flex-col sm:flex-row gap-4 mb-6 border border-neutral-300">
         <div className="relative flex-1">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
@@ -127,7 +127,7 @@ export function NFTGallery({ nfts, onNFTAction, className }: NFTGalleryProps) {
       ) : (
         <div className="space-y-2">
           {sortedNFTs.map((nft) => (
-            <div key={nft.id} className="flex items-center border rounded-lg p-3 hover:bg-muted/50">
+            <div key={nft.id} className=" min-w-1.2 flex items-center border rounded-lg p-3 hover:bg-muted/50">
               <div className="w-12 h-12 rounded overflow-hidden mr-4">
                 <img src={nft.image || "/placeholder.svg"} alt={nft.name} className="w-full h-full object-cover" />
               </div>

@@ -1,14 +1,13 @@
 import { ConnectWalletSteps } from "../registry/steps/connect-wallet";
 import  WalletConnectDemo from "../registry/demo/wallet-connect-demo";
-
 import DemoTransactionHistoryPage from "../registry/demo/transaction-history-demo";
 import { TransactionHistorySteps } from "../registry/steps/transaction-history";
-
 import SolanaBalanceBadgeDemo from "../registry/demo/solana-balance-demo"
 import { SolanaBalanceBadgeSteps } from "../registry/steps/solana-balance-badge";
-
 import NftCardDemo from "./demo/nft-card-demo";
-import {NFTCardSteps} from "../registry/steps/nft-card"
+import {NFTCardSteps} from "../registry/steps/nft-card";
+import { NFTGallerySteps } from "./steps/nft-gallery";
+import NftGalleryDemo from "./demo/nft-gallery-demo";
 
 type Entry = {
   id: string;
@@ -27,7 +26,6 @@ type Entry = {
     description: string,
   }[];
 };
-
 
 export const Registry: Entry[] = [
   {
@@ -182,7 +180,7 @@ export default function SolanaBalanceBadgeDemo() {
   ,
 
   {
-    id: "Nft-card",
+    id: "nft-card",
     title: "NFT Card",
     description:
       "NFT card component",
@@ -243,7 +241,96 @@ export default function NftCardDemo() {
         description: " ",
       },
     ],
-  }
+  },
+
+  {
+    id: "nft-gallery",
+    title: "NFT gallery",
+    description:
+      "NFT gallery component used in NFT marketplace",
+    Component: NftGalleryDemo,
+    demoCode: `
+ import { NFTGallery } from '@/components/nft-gallery'
+import React from 'react'
+
+const nfts = [
+  {
+    id: "nft1",
+    name: "Madlad #7648",
+    image: "/madlad.png",
+    collection: "Mad Lads",
+    price: {
+      amount: 47.79,
+    },
+    rarity: {
+      rank: 4799,
+      score: 85,
+      total: 5000,
+    },
+  },
+  {
+    id: "nft2",
+    name: "DeGod #456",
+    image: "/degod.png",
+    collection: "DeGods",
+    price: {
+      amount: 25,
+    },
+    rarity: {
+      rank: 456,
+      score: 92,
+      total: 10000,
+    },
+  },
+  {
+    id: "nft3",
+    name: "Madlad #3597",
+    image: "/madlad.png",
+    collection: "Mad Lads",
+    price: {
+      amount: 48.99,
+    },
+    rarity: {
+      rank: 3597,
+      score: 85,
+      total: 5000,
+    },
+  },
+]
+const NftGalleryDemo = () => {
+  
+  return (
+    <div className='m-8 max-h-screen max-w-screen'>
+            <h2 className="text-2xl font-bold mb-4">Your NFTs</h2>
+            <NFTGallery nfts={nfts} />
+          </div>
+  )
+}
+
+export default NftGalleryDemo
+    `.trim(),
+    installation: NFTGallerySteps,
+    props: [
+      {
+        name: "balance",
+        type: "number",
+        default: "0.00",
+        description: "Solana balance value",
+      },
+      {
+        name: "variant",
+        type: "string",
+        default: "default | outline | destructive | secondary",
+        description: "Type of badge variant",
+      },
+      {
+        name: "classname",
+        type: "string",
+        default: "default",
+        description: " ",
+      },
+    ],
+  },
 
 
   

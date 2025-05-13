@@ -18,10 +18,8 @@ export default function ComponentPage() {
   const router = useRouter()
   const id = typeof params?.component === "string" ? params.component : undefined
 
-  // Find the component entry using the ID
   const entry = Registry.find((d) => d.id === id)
 
-  // State for managing the active tab
   const [tab, setTab] = useState<"preview" | "code" | "installation">("preview")
   const [copied, setCopied] = useState(false)
   const [isClient, setIsClient] = useState(false)
@@ -31,7 +29,6 @@ export default function ComponentPage() {
     setIsClient(true)
   }, [])
 
-  // Handle case where the component is not found
   if (!entry) {
     return (
       <div className="container mx-auto flex min-h-[calc(100vh-10rem)] items-center justify-center p-6 bg-black text-white">
@@ -47,7 +44,6 @@ export default function ComponentPage() {
     )
   }
 
-  // Destructure the found entry for easier access
   const { title, description, Component, demoCode, installation} = entry
 
   const copyToClipboard = async () => {
@@ -151,7 +147,10 @@ export default function ComponentPage() {
                     )}
                   </Button>
                 </div>
-                <div
+                <motion.div 
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               transition={{ duration: 0.2 }}
                   className={cn(
                     "flex min-h-[500px]  items-center justify-center rounded-lg border border-neutral-800 bg-neutral-900/50 p-10 backdrop-blur-sm transition-all",
                     "hover:border-neutral-700 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)]",
@@ -160,7 +159,7 @@ export default function ComponentPage() {
                   <div className="component-preview">
                     <Component />
                   </div>
-                </div>
+                </motion.div>
                 <div className="mt-4 text-sm text-neutral-500 text-center">
                   Interact with the component to see its different states
                 </div>
