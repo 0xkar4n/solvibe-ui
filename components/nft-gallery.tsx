@@ -125,9 +125,9 @@ export function NFTGallery({ nfts, onNFTAction, className }: NFTGalleryProps) {
           ))}
         </div>
       ) : (
-        <div className="space-y-2">
+        <div className="space-y-2 ">
           {sortedNFTs.map((nft) => (
-            <div key={nft.id} className="flex items-center border rounded-lg p-3 hover:bg-muted/50">
+            <div key={nft.id} className="flex min-w-[800px] border rounded-lg p-3 hover:bg-muted/50">
               <div className="w-12 h-12 rounded overflow-hidden mr-4">
                 <img src={nft.image || "/placeholder.svg"} alt={nft.name} className="w-full h-full object-cover" />
               </div>

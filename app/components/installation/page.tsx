@@ -236,20 +236,7 @@ const InstallationPage: React.FC = () => {
             components in your project. Check out our component documentation to explore all the available 
             components and their usage.
           </p>
-          <motion.div 
-            className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-lg text-white"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.2 }}
-          >
-            <h3 className="text-xl font-bold mb-2">Ready to go further?</h3>
-            <p className="mb-4">
-              Explore our component documentation to see how you can leverage the full power of Solvibe-UI 
-              to create exceptional Solana dApps.
-            </p>
-            <button className="bg-white text-purple-600 px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all">
-              Explore Components
-            </button>
-          </motion.div>
+       
         </motion.section>
 
         <motion.section variants={sectionVariants} className="mb-16">

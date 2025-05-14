@@ -49,8 +49,8 @@ export function ConnectWalletDemo() {
       {
         name: "classname",
         type: "string",
-        default: "default",
-        description: "Tailwind css ",
+        default: "optional",
+        description: "Additional CSS class names to apply to the card container",
       },
     ],
 
@@ -170,10 +170,10 @@ export default function SolanaBalanceBadgeDemo() {
         description: "Type of badge variant",
       },
       {
-        name: "classname",
+        name: "classname ",
         type: "string",
-        default: "default",
-        description: " ",
+        default: "optional",
+        description: "Additional CSS class names to apply to the card container",
       },
     ],
   }
@@ -221,26 +221,74 @@ export default function NftCardDemo() {
 }   
     `.trim(),
     installation: NFTCardSteps,
-    props: [
+    props:  [
       {
-        name: "balance",
-        type: "number",
-        default: "0.00",
-        description: "Solana balance value",
-      },
-      {
-        name: "variant",
+        name: "id",
         type: "string",
-        default: "default | outline | destructive | secondary",
-        description: "Type of badge variant",
+        default: "—",
+        description: "Unique identifier for the NFT"
       },
       {
-        name: "classname",
+        name: "name",
         type: "string",
-        default: "default",
-        description: " ",
+        default: "—",
+        description: "Display name of the NFT"
       },
-    ],
+      {
+        name: "image",
+        type: "string",
+        default: "—",
+        description: "URL of the NFT's image"
+      },
+      {
+        name: "collection",
+        type: "string",
+        default: "optional",
+        description: "Name of the collection this NFT belongs to"
+      },
+      {
+        name: "attributes",
+        type: "Array<{ trait_type: string; value: string }>",
+        default: "optional",
+        description: "List of trait-type/value pairs for the NFT"
+      },
+      {
+        name: "price",
+        type: "{ amount: number }",
+        default: "optional",
+        description: "Current price of the NFT"
+      },
+      {
+        name: "rarity",
+        type: "{ rank: number; score: number; total: number }",
+        default: "optional",
+        description: "Rarity metadata for the NFT"
+      },
+      {
+        name: "isOwned",
+        type: "boolean",
+        default: "false",
+        description: "Whether the current user owns this NFT"
+      },
+      {
+        name: "onAction",
+        type: "() => void",
+        default: "optional",
+        description: "Callback when the primary action button is clicked"
+      },
+      {
+        name: "actionLabel",
+        type: "string",
+        default: "isOwned ? 'List for Sale' : 'Buy Now'",
+        description: "Label for the primary action button"
+      },
+      {
+        name: "className",
+        type: "string",
+        default: "optional",
+        description: "Additional CSS class names to apply to the card container"
+      },
+    ]
   },
 
   {
@@ -312,24 +360,24 @@ export default NftGalleryDemo
     installation: NFTGallerySteps,
     props: [
       {
-        name: "balance",
-        type: "number",
-        default: "0.00",
-        description: "Solana balance value",
+        name: "nfts",
+        type: "NFT[]",
+        default: "—",
+        description: "Array of NFT objects to display"
       },
       {
-        name: "variant",
-        type: "string",
-        default: "default | outline | destructive | secondary",
-        description: "Type of badge variant",
+        name: "onNFTAction",
+        type: "(nft: NFT) => void",
+        default: "optional",
+        description: "Callback when an individual NFT is interacted with"
       },
       {
-        name: "classname",
+        name: "className",
         type: "string",
-        default: "default",
-        description: " ",
+        default: "optonal",
+        description: "Additional CSS class names for the gallery container"
       },
-    ],
+    ]
   },
 
 
