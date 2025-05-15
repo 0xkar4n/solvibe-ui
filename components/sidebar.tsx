@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 interface SidebarLink {
   href: string;
@@ -46,7 +47,6 @@ const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Handle window resize and set mobile state
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -55,14 +55,12 @@ const Sidebar: React.FC = () => {
     // Set initial value
     checkIfMobile();
     
-    // Add event listener
     window.addEventListener('resize', checkIfMobile);
     
     // Clean up
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
-  // Close menu when route changes on mobile
   useEffect(() => {
     if (isMobile) {
       setIsOpen(false);
@@ -106,12 +104,10 @@ const Sidebar: React.FC = () => {
     </nav>
   );
 
-  // Mobile sidebar
   if (isMobile) {
     return (
       <>
-        {/* Mobile menu button */}
-        <div className="fixed top-4 left-4 z-50">
+        <div className="absolute top-4 left-4 z-50">
           <button 
             onClick={toggleMenu}
             className="p-2 rounded-md bg-neutral-800 text-white hover:bg-neutral-700 transition duration-200"
@@ -121,7 +117,6 @@ const Sidebar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile sidebar */}
         <div 
           className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
             isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -129,20 +124,12 @@ const Sidebar: React.FC = () => {
           onClick={() => setIsOpen(false)}
         >
           <div 
-            className={`bg-black text-neutral-300 w-64 min-h-screen p-4 border-neutral-600 border-dashed border-r transform transition-transform duration-300 ${
+            className={`bg-black mt-12 text-neutral-300 w-64 min-h-screen p-4 border-neutral-600 border-dashed border-r transform transition-transform duration-300 ${
               isOpen ? 'translate-x-0' : '-translate-x-full'
             }`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-end mb-4">
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="p-1 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800"
-                aria-label="Close menu"
-              >
-                <X size={20} />
-              </button>
-            </div>
+            
             {sidebarContent}
           </div>
         </div>
@@ -150,7 +137,6 @@ const Sidebar: React.FC = () => {
     );
   }
 
-  // Desktop sidebar
   return (
     <div className="bg-black text-neutral-300 w-64 min-h-screen p-4 border-neutral-600 border-dashed border-r hidden md:block">
       {sidebarContent}
