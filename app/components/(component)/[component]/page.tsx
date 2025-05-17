@@ -8,9 +8,6 @@ import { CodeBlock } from "@/components/code-block"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, Copy, Check, ExternalLink, Github, Package, Code2, Layers } from "lucide-react"
-import Link from "next/link"
-import { ComponentNav } from "@/components/component-nav"
-import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 
 export default function ComponentPage() {

@@ -197,13 +197,13 @@ export function TransactionHistory({
             <div className="flex space-x-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="sm" className="border-neutral-800 bg-neutral-900">
+                  <Button variant="outline" size="sm" className="border-neutral-800 bg-neutral-900 ">
                     <Filter className="mr-2 h-4 w-4" />
                     Type
                     <ChevronDown className="ml-2 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-neutral-900 border-neutral-800">
+                <DropdownMenuContent className="bg-neutral-900 border-neutral-800 text-white">
                   <DropdownMenuItem onClick={() => setFilterType("all")}>All Types</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setFilterType("send")}>Send</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setFilterType("receive")}>Receive</DropdownMenuItem>
@@ -219,7 +219,7 @@ export function TransactionHistory({
                     <ChevronDown className="ml-2 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-neutral-900 border-neutral-800">
+                <DropdownMenuContent className="bg-neutral-900 border-neutral-800 text-white">
                   <DropdownMenuItem onClick={() => setFilterStatus("all")}>All Statuses</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setFilterStatus("Confirmed")}>Confirmed</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setFilterStatus("Pending")}>Pending</DropdownMenuItem>
