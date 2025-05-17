@@ -36,17 +36,16 @@ const GettingStartedPage: React.FC = () => {
         variants={{
           visible: {
             transition: {
-              staggerChildren: 0.3, // Stagger the animation of child sections
+              staggerChildren: 0.3, 
             },
           },
         }}
       >
-        {/* Introduction Section */}
         <motion.section variants={sectionVariants}>
           <h1 className="text-5xl font-bold mb-6 text-white leading-tight">
             Elevate Your Solana dApps with Solvibe-UI
           </h1>
-          <hr className="border-neutral-700 mb-8" />
+          <div className="fade-dashed-border-bottom h-2 w-full mb-4" ></div>
           <p className="text-neutral-300 text-lg leading-relaxed">
             Welcome to Solvibe-UI, your intuitive and powerful component library meticulously designed for{' '}
             <strong>seamless integration and exceptional user experiences</strong> on the Solana blockchain.
@@ -54,12 +53,11 @@ const GettingStartedPage: React.FC = () => {
           </p>
         </motion.section>
 
-        {/* Why Solvibe-UI Exists Section */}
         <motion.section variants={sectionVariants}>
           <h2 className="text-4xl font-semibold mb-4 text-white mt-8">
             Why Solvibe-UI? Addressing the Solana Developer's Journey
           </h2>
-          <hr className="border-neutral-700 mb-6" />
+          <div className="fade-dashed-border-bottom h-2 w-full mb-4" ></div>
           <p className="text-neutral-300 mb-6 leading-relaxed">
             As Solana developers, we understand the grind. You're navigating complex blockchain interactions,
             wrestling with wallet integrations that can feel like arcane rituals, and constantly optimizing for
@@ -73,12 +71,11 @@ const GettingStartedPage: React.FC = () => {
           </p>
         </motion.section>
 
-        {/* The Power of Great Design in Web3 Section */}
         <motion.section variants={sectionVariants}>
           <h2 className="text-3xl font-semibold mb-4 text-white mt-8">
             The Impact of Thoughtful Design in Web3
           </h2>
-          <hr className="border-neutral-700 mb-6" />
+          <div className="fade-dashed-border-bottom h-2 w-full mb-4" ></div>
           <p className="text-neutral-300 mb-6 leading-relaxed">
             In the Web3 space, trust is paramount. Your user interface is more than just aesthetics;
             it's your initial handshake, a reflection of your project's professionalism, and a promise of reliability.
@@ -105,15 +102,14 @@ const GettingStartedPage: React.FC = () => {
         </motion.section>
 
     
-
-        {/* The Solvibe-UI Advantage Section */}
         <motion.section variants={sectionVariants}>
           <h2 className="text-3xl font-semibold mb-4 text-white mt-8">
-            The Solvibe-UI Advantage
+            Accelerate Your Solana dApp Development
           </h2>
-          <hr className="border-neutral-700 mb-6" />
+          <div className="fade-dashed-border-bottom h-2 w-full mb-4" ></div>
           <p className="text-neutral-300 mb-6 leading-relaxed">
-            By leveraging Solvibe-UI, you gain significant advantages:
+            Leveraging a specialized UI component library for Solana provides significant advantages,
+            streamlining your development workflow and enhancing the user experience:
           </p>
           <motion.ul
             className="list-disc list-inside text-neutral-300 mb-6 pl-4 space-y-3 leading-relaxed"
@@ -126,30 +122,30 @@ const GettingStartedPage: React.FC = () => {
             }}
           >
             <motion.li variants={itemVariants}>
-              <strong>Solana-First Philosophy:</strong> Every component is built with Solana's unique architecture
-              and performance characteristics in mind.
+              <strong>Built for Solana:</strong> Components are designed and optimized with Solana's unique speed
+              and transaction model in mind, ensuring seamless integration and performance.
             </motion.li>
             <motion.li variants={itemVariants}>
-              <strong>Developer Sanity:</strong> We've obsessed over the details – wallet connection modals,
-              transaction state management, responsive design – so you don't have to.
-              This means a <strong>100x better developer experience</strong>.
+              <strong>Developer Efficiency Boost:</strong> Pre-built, well-tested components like wallet connection modals,
+              NFT gallery, and input fields save you countless hours. Focus on your dApp's logic, not boilerplate UI.
+              This translates to a <strong>dramatically faster time-to-market</strong>.
             </motion.li>
             <motion.li variants={itemVariants}>
-              <strong>Rapid Prototyping & Customization:</strong> Use our components out-of-the-box for speed,
-              or easily tailor them to match your dApp's unique branding and style.
+              <strong>Consistent & Polished UI:</strong> Deliver a professional and consistent user interface out-of-the-box,
+              reducing the design and styling overhead and making your dApp instantly feel more robust.
             </motion.li>
             <motion.li variants={itemVariants}>
-              <strong>Performance Obsessed:</strong> Optimized for the blazing-fast experience Solana users expect.
-              No more laggy UIs.
+              <strong>Responsive by Design:</strong> Components are built to look great and function perfectly
+              across all devices, from mobile phones to desktops, without extra effort.
             </motion.li>
             <motion.li variants={itemVariants}>
-              <strong>Easier User Onboarding:</strong> A consistent, familiar, and intuitive UI lowers the barrier
-              for new users, helping them confidently interact with your Solana dApp.
+              <strong>Simplified User Interaction:</strong> Intuitive and familiar UI patterns for common Solana interactions
+              (like connecting wallets or approving transactions) lower the learning curve for users, improving adoption.
             </motion.li>
           </motion.ul>
           <p className="text-neutral-400 italic leading-relaxed mt-8">
-            In essence, Solvibe-UI is committed to lowering the barrier to entry for both Solana
-            developers and end-users, fostering a more vibrant, accessible, and user-friendly dApp ecosystem.
+            By utilizing pre-built, SolVibe UI components, you can drastically reduce development time,
+            minimize potential errors, and deliver a superior user experience for your decentralized application on the Solana chain.
           </p>
         </motion.section>
       </motion.div>

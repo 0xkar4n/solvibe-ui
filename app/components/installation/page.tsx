@@ -125,7 +125,7 @@ const InstallationPage: React.FC = () => {
           <h2 className="text-3xl font-semibold mb-4 text-white">
             Prerequisites
           </h2>
-          <hr className="border-neutral-700 mb-6" />
+          <div className="fade-dashed-border-bottom h-2 w-full mb-4" ></div>
           <p className="text-neutral-300 mb-6 leading-relaxed">
             Before you begin, ensure you have the following installed:
           </p>
@@ -148,7 +148,7 @@ const InstallationPage: React.FC = () => {
           <h2 className="text-3xl font-semibold mb-4 text-white">
             Installation Steps
           </h2>
-          <hr className="border-neutral-700 mb-6" />
+          <div className="fade-dashed-border-bottom h-2 w-full mb-4" ></div>
           
           <motion.div
             variants={{
@@ -228,7 +228,7 @@ const InstallationPage: React.FC = () => {
           <h2 className="text-3xl font-semibold mb-4 text-white">
             Next Steps
           </h2>
-          <hr className="border-neutral-700 mb-6" />
+          <div className="fade-dashed-border-bottom h-2 w-full mb-4" ></div>
           <p className="text-neutral-300 mb-6 leading-relaxed">
             Now that you have installed and configured the basic setup, you're ready to start using Solvibe-UI 
             components in your project. Check out our component documentation to explore all the available 
@@ -241,7 +241,7 @@ const InstallationPage: React.FC = () => {
           <h2 className="text-3xl font-semibold mb-4 text-white">
             Need Help?
           </h2>
-          <hr className="border-neutral-700 mb-6" />
+          <div className="fade-dashed-border-bottom h-2 w-full mb-4" ></div>
           <p className="text-neutral-300 leading-relaxed">
             If you encounter any issues during installation or have questions about using Solvibe-UI, 
             check out our GitHub repository for 

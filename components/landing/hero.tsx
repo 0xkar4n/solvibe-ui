@@ -5,6 +5,7 @@ import { Spotlight } from '../ui/spotlight-new'
 import { Cover } from '../ui/cover'
 import { Badge } from '../ui/badge'
 import { PulsatingButton } from '../ui/pulsating-button'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -39,7 +40,9 @@ const Hero = () => {
 
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
           <PulsatingButton className='bg-white text-black font-sans font-semibold text-sm '>
-            Explore Components
+            <Link href="/components">
+              Explore Compponents            
+            </Link>
           </PulsatingButton>
 
         </div>
