@@ -28,10 +28,10 @@ const sidebarSections: SidebarSection[] = [
     title: 'Components',
     links: [
       { href: '/components/connect-wallet', label: 'Connect Wallet' },
-      { href: '/components/transaction-history', label: 'Transaction History' },
-      { href: '/components/solana-balance-badge', label: 'Solana Balance Badge' },
       { href: '/components/nft-card', label: 'NFT Card' },
       { href: '/components/nft-gallery', label: 'NFT Gallery' },     
+      { href: '/components/solana-balance-badge', label: 'Solana Balance Badge' },
+      { href: '/components/transaction-history', label: 'Transaction History' },
     ],
   },
   // {

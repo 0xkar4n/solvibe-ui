@@ -21,7 +21,7 @@ const Hero = () => {
         className="relative z-20 flex flex-col items-center text-center space-y-6 max-w-[700px] pl-4"
       >
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge className=" py-1.5 px-4  bg-neutral-500/20 text-purple-300  border border-dashed border-neutral-300 backdrop-blur-sm hover:text-neutral-500 hover:bg-neutral-500/40">
+            <Badge className=" py-1.5 px-4  bg-neutral-500/20 text-purple-300  border border-dashed border-neutral-500 backdrop-blur-sm hover:text-neutral-500 hover:bg-neutral-500/40">
               <span className="mr-1 text-purple-400">✦</span> Built for Solana Dev's
             </Badge>
           </motion.div>

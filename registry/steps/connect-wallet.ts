@@ -20,11 +20,11 @@ import {
   PhantomWalletAdapter,
   SolflareWalletAdapter
 } from "@solana/wallet-adapter-wallets";
-import { clusterApiUrl } from "@solana/web3.js";
+import { clusterApiUrl, Cluster } from "@solana/web3.js"; 
 
 export const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const network = WalletAdapterNetwork.Mainnet;
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const endpoint = useMemo(() => clusterApiUrl(network as Cluster), [network]);
   const wallets = useMemo(
     () => [new PhantomWalletAdapter(),
   new SolflareWalletAdapter(),
@@ -85,10 +85,10 @@ type ModalState = "selection" | "connecting" | "error";
 const walletsToShow = 6;
 
 interface ConnectWalletProps {
-  buttonClassName?: string;
+  className?: string;
 }
 
-export const ConnectWallet: React.FC<ConnectWalletProps> = ({ buttonClassName }) => {
+export const ConnectWallet: React.FC<ConnectWalletProps> = ({ className }) => {
   const {
     select,
     publicKey,
@@ -144,7 +144,7 @@ setErrorMessage(\`Failed to connect to \${selectedWallet}. Please try again.\`);
     <div className="relative">
       {connected && publicKey ? (
         <motion.button
-          className={cn(connectedBtn, buttonClassName)}
+          className={cn(connectedBtn, className)}
           onClick={disconnect}
           whileTap={{ scale: 0.95 }}
         >
@@ -156,7 +156,7 @@ setErrorMessage(\`Failed to connect to \${selectedWallet}. Please try again.\`);
       ) : (
         <motion.button
           onClick={openModal}
-          className={cn(defaultBtn, buttonClassName)}
+          className={cn(defaultBtn, className)}
           whileTap={{ scale: 0.95 }}
         >
           Connect Wallet
