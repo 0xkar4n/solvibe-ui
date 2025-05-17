@@ -110,12 +110,11 @@ const InstallationPage: React.FC = () => {
           },
         }}
       >
-        {/* Installation Header Section */}
         <motion.section variants={sectionVariants}>
           <h1 className="text-5xl font-bold mb-6 text-white leading-tight">
             Installation Guide
           </h1>
-          <hr className="border-neutral-700 mb-8" />
+          <div className=''></div>
           <p className="text-neutral-300 text-lg leading-relaxed">
             Get started with Solvibe-UI in just a few steps. This guide will walk you through setting up Next.js 
             and installing the necessary Solana wallet adapters for your dApp development.
@@ -145,7 +144,6 @@ const InstallationPage: React.FC = () => {
           </motion.ul>
         </motion.section>
 
-        {/* Installation Steps Section */}
         <motion.section variants={sectionVariants}>
           <h2 className="text-3xl font-semibold mb-4 text-white">
             Installation Steps
@@ -177,12 +175,12 @@ const InstallationPage: React.FC = () => {
               <h4 className="text-xl font-semibold text-white mb-4">Next.js Configuration Options</h4>
               <p className="text-neutral-300 mb-4">When running the create-next-app command, you'll be prompted with the following options:</p>
               <ul className="list-disc list-inside text-neutral-300 space-y-2 pl-4">
-                <li><span className="text-purple-400">Would you like to use TypeScript?</span> → Yes</li>
-                <li><span className="text-purple-400">Would you like to use ESLint?</span> → No</li>
-                <li><span className="text-purple-400">Would you like to use Tailwind CSS?</span> → Yes</li>
-                <li><span className="text-purple-400">Would you like to use `src/` directory?</span> → No</li>
-                <li><span className="text-purple-400">Would you like to use App Router? (recommended)</span> → Yes</li>
-                <li><span className="text-purple-400">Would you like to customize the default import alias (@/*)?</span> → @</li>
+                <li><span className="text-neutral-400">Would you like to use TypeScript?</span> → Yes</li>
+                <li><span className="text-neutral-400">Would you like to use ESLint?</span> → No</li>
+                <li><span className="text-neutral-400">Would you like to use Tailwind CSS?</span> → Yes</li>
+                <li><span className="text-neutral-400">Would you like to use `src/` directory?</span> → No</li>
+                <li><span className="text-neutral-400">Would you like to use App Router? (recommended)</span> → Yes</li>
+                <li><span className="text-neutral-400">Would you like to customize the default import alias (@/*)?</span> → @</li>
               </ul>
             </motion.div>
 

@@ -3,7 +3,7 @@
 export const ConnectWalletSteps = [
   {
     title: "Install Dependencies",
-    code: `npm install @solana/wallet-adapter-react @solana/wallet-adapter-wallets  @solana/wallet-adapter-base`
+    code: `npm install @solana/wallet-adapter-react @solana/wallet-adapter-wallets  @solana/wallet-adapter-base  @solana/web3.js framer-motion`
   },
   {
     title: "Create Wallet Context Provider",

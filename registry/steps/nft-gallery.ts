@@ -1,7 +1,7 @@
 export const NFTGallerySteps = [
     {
       title: "1. Install UI Primitives & Dependencies",
-      code: `npm install @shadcn/ui lucide-react next react react-dom`,
+      code: `npx shadcn@latest add input select button`,
     },
     {
       title: "2. Copy the `NFTCard` Component",
