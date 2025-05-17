@@ -18,7 +18,7 @@ const nft =
 
 export default function NftCardDemo() {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center justify-center">
             <NFTCard
               key={nft.id}
               id={nft.id}

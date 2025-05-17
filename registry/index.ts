@@ -110,24 +110,24 @@ export default function TransactionHistoryDemo() {
     installation: TransactionHistorySteps,
     props: [
       {
-        name: "variant",
-        type: "string",
-        default: "default",
-        description: "The button style variant to use.",
+        name: "transactions",
+        type: "Transaction[]",
+        default: "[]",
+        description: "An array of transaction objects to display in the history list.",
       },
       {
-        name: "size",
+        name: "title (optional)",
         type: "string",
-        default: "default",
-        description: "The size of the button.",
+        default: "\"Transaction History\"",
+        description: "The heading displayed above the transaction list.",
       },
       {
-        name: "asChild",
+        name: "showFilters (optional)",
         type: "boolean",
-        default: "false",
-        description: "Whether to render as a child element.",
+        default: "true",
+        description: "Determines whether filter controls (type, status, search) are shown.",
       },
-    ],
+    ]
   },
 
   {

@@ -127,26 +127,7 @@ export default function ComponentPage() {
                 transition={{ duration: 0.3 }}
                 className="relative"
               >
-                <div className="absolute top-4 right-4 z-10 flex space-x-2">
-                  <Button
-                    onClick={copyToClipboard}
-                    size="sm"
-                    variant="outline"
-                    className="bg-neutral-900 border-neutral-800 hover:bg-neutral-800"
-                  >
-                    {copied ? (
-                      <>
-                        <Check className="mr-2 h-4 w-4" />
-                        Copied
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="mr-2 h-4 w-4" />
-                        Copy Code
-                      </>
-                    )}
-                  </Button>
-                </div>
+                
                 <motion.div 
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
@@ -156,7 +137,7 @@ export default function ComponentPage() {
                     "hover:border-neutral-700 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)]",
                   )}
                 >
-                  <div className="component-preview">
+                  <div className="component-preview w-full">
                     <Component />
                   </div>
                 </motion.div>

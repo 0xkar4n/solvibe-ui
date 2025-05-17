@@ -1,34 +1,113 @@
-import NFTCard from "@/components/nft-card";
+"use client"
 
-const nft = 
+import { useState } from "react"
+import { type Transaction, TransactionHistory } from "../../../components/transaction-history"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button"
+import { ArrowUpRight, ArrowDownLeft, Clock } from "lucide-react"
+
+const demoTransactions: Transaction[] = [
   {
-    id: "nft3",
-    name: "Madlad #3597",
-    image: "/madlad.png",
-    collection: "Mad Lads",
-    price: {
-      amount: 48.99,
-    },
-    rarity: {
-      rank: 3597,
-      score: 85,
-      total: 5000,
-    },
+    id: "tx_8f7e6d5c4b3a2109",
+    type: "receive",
+    amount: "0.5",
+    token: "SOL",
+    address: "8xh3hVxBJcQADxvUfnCgD1ftiU7B5NvThYtmcqULf2VR",
+    timestamp: "2 mins ago",
+    status: "Confirmed",
+    description: "Payment from Alice",
+    fee: "0.000005 SOL",
+    blockExplorer: "https://explorer.solana.com/tx/8f7e6d5c4b3a2109",
+  },
+  {
+    id: "tx_7e6d5c4b3a210987",
+    type: "send",
+    amount: "10",
+    token: "USDC",
+    address: "DRpbCBMxVnDK7maPM5tGv6MvB3v1TvJXvpgDNZ5jNgbf",
+    timestamp: "1 hour ago",
+    status: "Confirmed",
+    description: "Payment for services",
+    fee: "0.000005 SOL",
+    blockExplorer: "https://explorer.solana.com/tx/7e6d5c4b3a210987",
+  },
+  {
+    id: "tx_6d5c4b3a21098765",
+    type: "pending",
+    amount: "2.5",
+    token: "SOL",
+    address: "4xh3hVxBJcQADxvUfnCgD1ftiU7B5NvThYtmcqULf2VR",
+    timestamp: "5 mins ago",
+    status: "Pending",
+    description: "Transfer to wallet",
+    fee: "0.000005 SOL",
+    blockExplorer: "https://explorer.solana.com/tx/6d5c4b3a21098765",
+  },
+  {
+    id: "tx_5c4b3a2109876543",
+    type: "send",
+    amount: "100",
+    token: "BONK",
+    address: "CRpbCBMxVnDK7maPM5tGv6MvB3v1TvJXvpgDNZ5jNgbf",
+    timestamp: "2 days ago",
+    status: "Failed",
+    description: "Donation",
+    fee: "0.000005 SOL",
+    blockExplorer: "https://explorer.solana.com/tx/5c4b3a2109876543",
+  },
+  {
+    id: "tx_4b3a210987654321",
+    type: "receive",
+    amount: "1.2",
+    token: "SOL",
+    address: "9xh3hVxBJcQADxvUfnCgD1ftiU7B5NvThYtmcqULf2VR",
+    timestamp: "3 days ago",
+    status: "Confirmed",
+    description: "Refund",
+    fee: "0.000005 SOL",
+    blockExplorer: "https://explorer.solana.com/tx/4b3a210987654321",
+  },
+  {
+    id: "tx_3a21098765432109",
+    type: "send",
+    amount: "25",
+    token: "USDC",
+    address: "ERpbCBMxVnDK7maPM5tGv6MvB3v1TvJXvpgDNZ5jNgbf",
+    timestamp: "1 week ago",
+    status: "Confirmed",
+    description: "Weekly savings",
+    fee: "0.000005 SOL",
+    blockExplorer: "https://explorer.solana.com/tx/3a21098765432109",
+  },
+]
+
+export default function test() {
+  const [activeTab, setActiveTab] = useState("all")
+
+  // Filter transactions based on active tab
+  const getFilteredTransactions = () => {
+    switch (activeTab) {
+      case "sent":
+        return demoTransactions.filter((tx) => tx.type === "send")
+      case "received":
+        return demoTransactions.filter((tx) => tx.type === "receive")
+      case "pending":
+        return demoTransactions.filter((tx) => tx.type === "pending")
+      default:
+        return demoTransactions
+    }
   }
 
-export default function Connect() {
   return (
-    <div className="flex items-center">
+    <div className="w-full   min-h-screen">
 
-<NFTCard
-              key={nft.id}
-              id={nft.id}
-              name={nft.name}
-              image={nft.image}
-              collection={nft.collection}
-              price={nft.price}
-              rarity={nft.rarity}
-            />
+     
+          <TransactionHistory
+            transactions={demoTransactions}
+            title={`${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Transactions`}
+            showFilters={true}
+          />
+
     </div>
   )
 }

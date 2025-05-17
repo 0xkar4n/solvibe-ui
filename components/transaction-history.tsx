@@ -55,6 +55,7 @@ export function TransactionHistory({
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc")
   const [filterType, setFilterType] = useState<FilterType>("all")
   const [filterStatus, setFilterStatus] = useState<FilterStatus>("all")
+  const [expandedTransaction, setExpandedTransaction] = useState<string | null>(null)
   const [filteredTransactions, setFilteredTransactions] = useState(transactions)
   const [isClient, setIsClient] = useState(false)
 
@@ -273,9 +274,11 @@ export function TransactionHistory({
                   className="overflow-hidden"
                 >
                   <div
-                    className=
-                      "rounded-lg border border-neutral-800 bg-neutral-900/50 p-4 transition-all duration-200 hover:border-neutral-700 hover:bg-neutral-900"       
-                 >
+                    className={cn(
+                      "rounded-lg border border-neutral-800 bg-neutral-900/50 p-4 transition-all duration-200 hover:border-neutral-700 hover:bg-neutral-900",
+                      expandedTransaction === tx.id ? "border-neutral-700" : "",
+                    )}
+                  >
                     <div className="md:hidden space-y-3">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
@@ -337,7 +340,7 @@ export function TransactionHistory({
                           </a>
                         )}
                       </div>
-                      <div className="flex-1 text-sm text-neutral-400 ">{tx.timestamp}</div>
+                      <div className="flex-1 text-sm text-neutral-400 bg-blue-600">{tx.timestamp}</div>
                       <div className="flex-1 flex items-center justify-between">
                         <Badge className={
                       tx.status === 'Confirmed'

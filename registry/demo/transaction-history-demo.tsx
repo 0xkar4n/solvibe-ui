@@ -99,38 +99,15 @@ export default function DemoTransactionHistoryPage() {
   }
 
   return (
-    <div className="w-full bg-black text-white min-h-screen">
+    <div className="w-full   min-h-screen">
 
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="mb-6 w-full justify-start rounded-lg border border-neutral-800 bg-neutral-900 p-1">
-          <TabsTrigger value="all" className="rounded-md data-[state=active]:bg-neutral-800">
-            All
-          </TabsTrigger>
-          <TabsTrigger value="sent" className="rounded-md data-[state=active]:bg-neutral-800">
-            Sent
-          </TabsTrigger>
-          <TabsTrigger value="received" className="rounded-md data-[state=active]:bg-neutral-800">
-            Received
-          </TabsTrigger>
-          <TabsTrigger value="pending" className="rounded-md data-[state=active]:bg-neutral-800">
-            Pending
-          </TabsTrigger>
-        </TabsList>
-
-        <TabsContent value={activeTab} className="mt-0 w-full">
+     
           <TransactionHistory
-            transactions={getFilteredTransactions()}
+            transactions={demoTransactions}
             title={`${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Transactions`}
             showFilters={true}
           />
-        </TabsContent>
-      </Tabs>
 
-      <div className="mt-8 flex justify-center">
-        <Button variant="outline" className="border-neutral-800 bg-neutral-900 hover:bg-neutral-800">
-          Load More Transactions
-        </Button>
-      </div>
     </div>
   )
 }

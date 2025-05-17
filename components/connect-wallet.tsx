@@ -211,7 +211,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ buttonClassName }) => {
   const connectedButtonClasses = "flex items-center space-x-2 bg-white text-black px-5 py-2.5 rounded-xl shadow-lg";
 
   return (
-    <div className="relative z-50">
+    <div className="relative z-50 flex items-center justify-center">
       {publicKey ? (
         <motion.button
           
@@ -225,7 +225,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ buttonClassName }) => {
           <motion.div className="flex items-center gap-2" layout>
 
             <motion.span
-              className="truncate w-32 md:w-40 font-medium text-xl"
+              className="truncate w-32 md:w-40 font-medium text-lg"
               variants={connectedVariants}
               initial="initial"
               animate="animate"
